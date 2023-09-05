@@ -1,0 +1,42 @@
+.dayReport {
+  background-color: rgba(80, 162, 195, 0.571);
+  border-radius: 10px;
+  width: 100px;
+
+}
+.card {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  text-align: center;
+  opacity: 80%;
+}
+.heading {
+  margin-bottom: 2rem;
+  color: rgb(4, 8, 12);
+  margin-top: 15px;
+}
+.time {
+  margin-top: 10px;
+}
+.temperature {
+  margin-bottom: 6px;
+}
+.icon {
+  border-bottom: 1px solid white;
+  /* padding-top: 4px; */
+}
+.heading {
+    margin-left: 1.5rem;
+  }
+@media screen and (min-width: 800px) {
+  .heading {
+    margin-left: 10rem;
+    margin-bottom: 3rem;
+  }
+  .card{
+    gap: 5rem;
+
+  }
+}

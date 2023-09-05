@@ -1,0 +1,41 @@
+
+.wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .modal {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    max-width: 80%;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .error {
+    color: #151010;
+  }
+  
+  .close {
+    background-color: skyblue;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px; 
+  }
+  
+  

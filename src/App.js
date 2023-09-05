@@ -1,24 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Header from "./header";
+import Content from "./content";
+import { useEffect, useState } from "react";
+import { currentWeather } from "./apiHandler/apiHandler";
+import Modal from "./modal";
 
 function App() {
+  const [city, setCity] = useState("mumbai");
+  const [weather, setWeather] = useState([]);
+  const [modal, setModal] = useState(false);
+  const [message, setMessage] = useState("");
+
+  const changeLocation = () => {
+    currentWeather(city)
+      .then(setWeather)
+      .catch((error) => {
+        if (error.status === 404) {
+          setMessage("Please enter correct location");
+          setModal(true);
+        } else {
+          setMessage("Something went wrong");
+          setModal(true);
+        }
+      });
+  };
+
+  useEffect(() => {
+    currentWeather(city)
+      .then(setWeather)
+      .catch(() => {
+        setMessage("Something went wrong");
+        setModal(true);
+      });
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header setCity={setCity} changeLocation={changeLocation}></Header>
+      <Content weather={weather}></Content>
+      {modal && <Modal setModal={setModal} message={message}></Modal>}
+    </>
   );
 }
 

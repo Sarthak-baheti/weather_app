@@ -1,0 +1,51 @@
+.navbar {
+  display: flex;
+  height: 8vh;
+  background-color: rgb(15, 126, 170);
+  justify-content: start;
+  align-items: center;
+}
+.navbar_content {
+  color: white;
+  font-size: 17px;
+}
+.input {
+  padding-left: 6px;
+  border-radius: 15px;
+  border: none;
+  height: 25px;
+  width: 160px;
+  color: black; 
+  font-size: 15px;
+  
+
+}
+.button {
+  margin-left: 1rem;
+  background-color: rgb(12, 102, 134);
+  border: none;
+  color: white;
+  font-size: 15px;
+  padding: 8px 16px;
+  border-radius: 20px;
+}
+
+.form {
+  margin-left: 7%;
+}
+@media screen and (min-width: 800px) {
+  .form {
+    margin-left: 32%;
+  }
+}
+@media screen and (min-width: 540px) and (max-width: 799px) {
+  .form {
+    margin-left: 24%;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .navbar_content {
+    font-size: 13px;
+  }
+}
